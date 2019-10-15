@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0;" charset="utf-8">
+    <title>Activate your License</title>
+
+    <!--          _ _ _                                                         _ _ _
+              _ /       \ _                                                 _ /       \ _
+          _ /               \ _                                         _ /               \ _
+       _/_ _ _ _ _ _ _ _ _ _ _ _\ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ /_ _ _ _ _ _ _ _ _ _ _ _\_
+      |_ _ _ _ _ _ _ _ _ _ _ _ _ _| _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _|
+      |                           |                                 |                           |
+      |                           |       NICE TO MEET YOU :)       |                           |
+      |             DESIGNED BY SONG JUN KAI, NEWS & NETWORK DEPARTMENT OF SISU SEF             |
+      |                           |            _ _ _ _ _            |                           |
+      |                           |           |    |    |           |                           |
+      |                           |           |   ·|·   |           |                           |
+      |_ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _|_ _ | _ _|_ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _|
+    -->
+    
+    <style>
+
+      @font-face{
+          font-family:font1; 
+          src:url("fonts/font1.ttf");
+      }
+
+      body,html{
+      margin:0px;
+      background-color:#130b23;
+      }
+
+      iframe{
+      border-width:0;
+      }
+	
+    </style>
+
+  </head>
+
+  <body id="body">
+	  <div style="height:100%;width:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;">
+  	  <iframe src="images/logo.svg" width="42%" style="margin-top:5%;"></iframe>
+      <img src="images/h2.png" width="100%">
+      <form style="width:100%;font-family:font1;font-size:4em;color:#ead887">
+        <div style="text-align:center;">
+          <span>姓名：</span>
+          <input type="text" id="name" name="name" maxlength="6" onkeyup="value=value.replace(/[\d]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[\d]/g,''))" style="text-align:center;width:6em;height:1.5em;font-family:font1;font-size:1em;color:#ead887;background-color:rgba(0,0,0,0);">
+        </div>
+        <div style="text-align:center;margin-top:0.5em;">
+          <span>卡号：</span>
+          <input type="text" id="number" name="nubmer" maxlength="4" oninput = "value=value.replace(/[^\d]/g,'')" style="text-align:center;width:6em;height:1.5em;font-family:font1;font-size:1em;color:#ead887;background-color:rgba(0,0,0,0);">
+       </div>
+      </form>
+		  <div style="width:100%;text-align:center;">
+        <img src="/images/button2.png" width="30%" onclick="submit()">
+      </div>
+  	  <img src="images/venus.png" width="100%">
+	  </div>
+
+    <script>
+      var body = document.getElementById("body");
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+      console.log("height: " + height + ", width: " + width)
+      body.style.height = height + "px";
+      body.style.width = width + "px";
+    </script>
+
+    <script>
+      function submit()
+      {
+      var name = document.getElementById("name").value;
+      var number = document.getElementById("number").value;
+      if(name=="")
+              {
+                alert("请填写姓名");
+                return false;
+              }
+      var patten= new RegExp(/\d\d\d\d/);
+        if(patten.test(number))
+        {
+        }
+        else
+        {
+            alert("请填写四位卡号");
+            return false;
+        }
+      alert("激活成功");
+      window.open("done.html?name="+name+"&number="+number);
+      }
+    </script>
+
+    <script>
+        var _mtac = {"senseQuery":1};
+        (function() {
+          var mta = document.createElement("script");
+          mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+          mta.setAttribute("name", "MTAH5");
+          mta.setAttribute("sid", "500699551");
+
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(mta, s);
+        })();
+    </script>
+
+  </body>
+
+</html>

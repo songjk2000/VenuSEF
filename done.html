@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+    <head>
+        <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0;" charset="utf-8">
+        <title>Activated Successfully</title>
+
+    <!--          _ _ _                                                         _ _ _
+              _ /       \ _                                                 _ /       \ _
+          _ /               \ _                                         _ /               \ _
+       _/_ _ _ _ _ _ _ _ _ _ _ _\ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ /_ _ _ _ _ _ _ _ _ _ _ _\_
+      |_ _ _ _ _ _ _ _ _ _ _ _ _ _| _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ |_ _ _ _ _ _ _ _ _ _ _ _ _ _|
+      |                           |                                 |                           |
+      |                           |       NICE TO MEET YOU :)       |                           |
+      |             DESIGNED BY SONG JUN KAI, NEWS & NETWORK DEPARTMENT OF SISU SEF             |
+      |                           |            _ _ _ _ _            |                           |
+      |                           |           |    |    |           |                           |
+      |                           |           |   ·|·   |           |                           |
+      |_ _ _ _ _ _ _ _ _ _ _ _ _ _|_ _ _ _ _ _|_ _ | _ _|_ _ _ _ _ _|_ _ _ _ _ _ _ _ _ _ _ _ _ _|
+    -->
+    
+        <style>
+
+            @font-face{
+                font-family:font1; 
+                src:url("fonts/font1.ttf");
+            }
+
+            @font-face{
+                font-family:font2; 
+                src:url("fonts/font2.ttf");
+            }
+
+            body,html{
+            margin:0px;
+            background-color:#130b23;
+            }
+
+            iframe{
+            border-width:0;
+            }
+	
+        </style>
+
+    </head>
+
+    <body id="body">
+        <div style="height:100%;width:100%;display:flex;flex-direction:column;justify-content:space-between;align-items:center;">
+            <iframe src="images/logo.svg" width="42%" style="margin-top:5%;"></iframe>
+            <img src="images/h3.png" width="100%">
+            <div>
+                <div style="position:relative;">
+                    <img src="images/CARD-FRONT-without-NAME.png" width="100%">
+                    <div id="name" height="10%" style="position:absolute;top:45.5%;left:27%;font-family:font1;font-size:2.5em;color:#ead887;"></div>
+                    <div id="number" height="10%" style="white-space:nowrap;position:absolute;top:82.5%;left:72.5%;font-family:font2;font-size:1.6em;color:#ead887;"></div>
+                </div>
+            </div>
+            <div style="width:100%;text-align:center;">
+                <img src="/images/button3.png" width="30%" onclick="link()">
+            </div>
+	        <div style="text-align:center;font-size:30px;color:grey;margin-bottom:5%;font-family:font1;">
+                ©School of Economics and Finance, SISU<br/>Just For Entertainment
+            </div>
+	    </div>
+    
+        <script>
+            var body = document.getElementById("body");
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            console.log("height: " + height + ", width: " + width)
+            body.style.height = height + "px";
+            body.style.width = width + "px";
+        </script>
+
+        <script>  
+            var URL = document.URL; 
+            var namenumber = URL.split('?name=')[1];
+            var name = namenumber.split('&')[0];
+            var number = namenumber.split('&number=')[1];
+            name=decodeURI(name);
+            document.getElementById("name").innerHTML="For " + name
+            document.getElementById("number").innerHTML="NO. " + number
+        </script>
+
+        <script>
+            function link(){
+            window.open("download.html?name="+name+"&number="+number);
+            }
+        </script>
+
+        <script>
+            var _mtac = {"senseQuery":1};
+            (function() {
+            var mta = document.createElement("script");
+            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+            mta.setAttribute("name", "MTAH5");
+            mta.setAttribute("sid", "500699551");
+
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(mta, s);
+            })();
+        </script>
+
+    </body>
+
+</html>
